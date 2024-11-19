@@ -693,46 +693,52 @@ button {
     width: 100%
 }
 
-.hero {
+.hero { 
     position: relative;
     display: flex;
     height: 100vh;
     width: 100%;
-    z-index: 999
+    z-index: 999;
+    overflow: hidden;
 }
 
 .canvas {
     position: absolute;
     top: 0;
-    right: 0;
     left: 0;
-    bottom: 0;
     width: 100%;
     height: 100vh;
     background-color: #1a1a1a;
-    overflow: hidden
+    overflow: hidden;
+    z-index: -2; /* Ensure it's behind everything */
 }
 
 .connecting-dots {
-    height: 100%;
-    width: 100%
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Place the dots above the canvas but behind other content */
 }
+
 
 .heading {
     position: relative;
-    align-self: center;
-    justify-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: normal;
-    width: fit-content;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
     color: #fafafa;
     font-weight: 300;
-    z-index: 999
+    z-index: 1; /* Ensure the heading content is on top */
+    background-image: url('./portfolioicon1.png'); /* Add image only in the heading */
+    background-size: 500px; /* Adjust as needed */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
 }
 
 .heading__line-1 {
@@ -886,13 +892,12 @@ button {
 }
 
 .main-bg {
-    height: 100vh;
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 100vh;
     width: 100%;
-    background-color: royalblue
+    height: auto;
+    background-color: rgb(52, 221, 239);
 }
-
 .navigation {
     display: flex;
     margin-right: 10rem;
